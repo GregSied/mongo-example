@@ -1,10 +1,11 @@
 package test;
 
 import io.vavr.collection.List;
+import lombok.NonNull;
 import lombok.Value;
 
 @Value
 public class Shop {
-  private final String name;
-  private final List<String> products;
+  @NonNull private final String name;
+  @NonNull private final List<String> products;
 }

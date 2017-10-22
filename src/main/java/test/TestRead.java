@@ -3,6 +3,7 @@ package test;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
 
 import static io.vavr.API.List;
 
@@ -14,5 +15,7 @@ public class TestRead {
     List().appendAll(mongoCollection.find())
         .forEach(System.out::println);
 
+    List().appendAll(mongoCollection.find(Document.parse("{\"name\": \"shopname\"}")))
+        .forEach(System.out::println);
   }
 }
